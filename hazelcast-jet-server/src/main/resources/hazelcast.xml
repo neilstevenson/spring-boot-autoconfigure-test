@@ -1,0 +1,23 @@
+<hazelcast xsi:schemaLocation="http://www.hazelcast.com/schema/config hazelcast-config-3.8.xsd"
+           xmlns="http://www.hazelcast.com/schema/config"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<group>
+		<name>jet</name>
+		<password>jet</password>
+	</group>
+
+	<!-- IMDG group port 8001. Jet group port 9001 -->
+    <network>
+        <port auto-increment="true">9001</port>
+        <join>
+            <multicast enabled="false"/>
+            <tcp-ip enabled="true">
+                <member-list>
+                    <member>127.0.0.1:9001</member>
+                </member-list>
+            </tcp-ip>
+        </join>
+    </network>
+        
+</hazelcast>
